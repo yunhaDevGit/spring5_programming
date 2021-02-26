@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="ExternalSystem" linkedProjectPath="$MODULE_DIR$/chap02" rootProjectPath="$MODULE_DIR$/chap02" />
+<module external.linked.project.path="$MODULE_DIR$/chap02" external.root.project.path="$MODULE_DIR$/chap02" type="JAVA_MODULE" version="4">
+  <component name="ExternalSystem" linkedProjectPath="$MODULE_DIR$/chap03" rootProjectPath="$MODULE_DIR$/chap03" />
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
