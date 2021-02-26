@@ -1,3 +1,5 @@
+package DI_example;
+
 import java.util.HashMap;
 import java.util.Map;
 

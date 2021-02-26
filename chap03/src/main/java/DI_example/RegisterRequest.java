@@ -1,3 +1,5 @@
+package DI_example;
+
 public class RegisterRequest {
 
     private String email;

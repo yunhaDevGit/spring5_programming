@@ -1,3 +1,5 @@
+package DI_example;
+
 public class ChangePasswordService {
 
     private MemberDao memberDao;

@@ -1,3 +1,5 @@
+package DI_example;
+
 import java.time.LocalDateTime;
 
 public class MemberRegisterService {

@@ -1,3 +1,5 @@
+package DI_example;
+
 public class Assembler {
 
     private MemberDao memberDao;
@@ -32,4 +34,4 @@ public class Assembler {
 // 실제 객체를 생성하는 코드는 어디에 있을까?
 // main 메서드에서 객체를 생성해도 되지만,
 // 의존 객체를 주입해주는 클래스를 따로 작성하는 것이 조금 더 좋다.
-// Assembler 클래스가 여기서 의존 객체를 주입(서로 다른 두 객체 조립)하는 클래스이다
+// DI_example.Assembler 클래스가 여기서 의존 객체를 주입(서로 다른 두 객체 조립)하는 클래스이다

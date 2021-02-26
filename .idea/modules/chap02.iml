@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id="chap02" external.linked.project.path="$MODULE_DIR$/../../chap02" external.root.project.path="$MODULE_DIR$/../../chap02" external.system.id="GRADLE" external.system.module.group="com.study.spring5" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
-  <component name="ExternalSystem" linkedProjectPath="$MODULE_DIR$/../../chap02" rootProjectPath="$MODULE_DIR$/../../chap02" />
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$/../../chap02">
-      <excludeFolder url="file://$MODULE_DIR$/../../chap02/.gradle" />
-      <excludeFolder url="file://$MODULE_DIR$/../../chap02/build" />
-    </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-  </component>
+  <component name="ExternalSystem" linkedProjectPath="$MODULE_DIR$/../../chap03" rootProjectPath="$MODULE_DIR$/../../chap03" />
 </module>

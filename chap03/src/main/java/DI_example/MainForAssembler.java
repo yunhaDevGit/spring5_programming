@@ -1,11 +1,13 @@
+package DI_example;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class MainForAssembler {
 
-    // Assembler 객체 생성
-    // Assembler 생성자에 필요한 객체 생성&의존성 주입 -> Assembler 객체 생성 시점에 필요한 객체가 모두 생성된다
+    // DI_example.Assembler 객체 생성
+    // DI_example.Assembler 생성자에 필요한 객체 생성&의존성 주입 -> DI_example.Assembler 객체 생성 시점에 필요한 객체가 모두 생성된다
     private static Assembler assembler = new Assembler();
 
     private static void processNewCommand(String[] arg){
