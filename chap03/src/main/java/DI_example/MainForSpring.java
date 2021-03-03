@@ -1,21 +1,25 @@
 package DI_example;
 
+import config.AppCtx;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class MainForAssembler {
+public class MainForSpring {
 
-    // DI_example.Assembler 객체 생성
-    // DI_example.Assembler 생성자에 필요한 객체 생성&의존성 주입 -> DI_example.Assembler 객체 생성 시점에 필요한 객체가 모두 생성된다
-    private static Assembler assembler = new Assembler();
+    public static ApplicationContext ctx = null;
 
     private static void processNewCommand(String[] arg){
         if(arg.length!=5){
             printHelp();
             return;
         }
-        MemberRegisterService registerService = assembler.getMemberRegisterService();
+
+        // 스프링 컨테이너로부터 이름이 "memberRegisterService"인 bean 객체를 구한다.
+        MemberRegisterService regSvc = ctx.getBean("memberRegisterService", MemberRegisterService.class);
         RegisterRequest request = new RegisterRequest();
         request.setEmail(arg[1]);
         request.setName(arg[2]);
@@ -27,7 +31,7 @@ public class MainForAssembler {
             return;
         }
         try{
-            registerService.regist(request);
+            regSvc.regist(request);
             System.out.println("등록했습니다 \n");
         }catch (DuplicateMemberException e){
             System.out.println("이미 존재하는 이메일입니다 \n");
@@ -39,9 +43,11 @@ public class MainForAssembler {
             printHelp();
             return;
         }
-        ChangePasswordService changePasswordService = assembler.getChangePasswordService();
+
+        // 스프링 컨테이너로부터 이름이 "changePasswordService"인 bean 객체를 구한다.
+        ChangePasswordService changePwdSvc = ctx.getBean("changePasswordService", ChangePasswordService.class);
         try{
-            changePasswordService.changePassword(args[1], args[2], args[3]);
+            changePwdSvc.changePassword(args[1], args[2], args[3]);
             System.out.println("암호를 변경했습니다 \n");
         } catch (MemberNotFoundException e){
             System.out.println("존재하지 않는 이메일입니다. \n");
@@ -59,8 +65,14 @@ public class MainForAssembler {
         System.out.println();
     }
 
+
     public static void main(String[] args) throws IOException {
-        // 콘솔에서 입력하기 위함
+        // 스프링 컨테이너 생성
+        // 스프링 컨테이너는 Assembler와 동일하게 객체를 생성하고, 의존 객체를 주입해준다.
+        // Assembler는 직접 객체를 생성하는 대신 AnnotationConfigApplicationContext는
+        // 설정 파일(AppCtx)로부터 생성할 객체와 의존 주입 대상을 정한다.
+        ctx = new AnnotationConfigApplicationContext(AppCtx.class);
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         while(true){
             System.out.println("명령어를 입력하세요");
