@@ -1,8 +1,6 @@
 package config;
 
-import DI_example.ChangePasswordService;
-import DI_example.MemberDao;
-import DI_example.MemberRegisterService;
+import DI_example.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -27,4 +25,31 @@ public class AppCtx {
         changePasswordService.setMemberDao(memberDao());
         return changePasswordService;
     }
+
+    @Bean
+    public MemberPrinter memberPrinter(){
+        return new MemberPrinter();
+    }
+
+    @Bean
+    public MemberListPrinter memberListPrinter(){
+        return new MemberListPrinter(memberDao(), memberPrinter());
+    }
+
+    @Bean
+    public MemberInfoPrinter infoPrinter(){
+        MemberInfoPrinter memberInfoPrinter = new MemberInfoPrinter();
+        memberInfoPrinter.setMemberDao(memberDao());
+        memberInfoPrinter.setMemberPrinter(memberPrinter());
+        return memberInfoPrinter;
+    }
+
+    @Bean
+    public VersionPrinter versionPrinter(){
+        VersionPrinter versionPrinter = new VersionPrinter();
+        versionPrinter.setMajorVersion(5);
+        versionPrinter.setMinorVersion(0);
+        return versionPrinter;
+    }
+
 }

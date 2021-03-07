@@ -56,12 +56,33 @@ public class MainForSpring {
         }
     }
 
+    private static void processListCommand() {
+        MemberListPrinter memberListPrinter = ctx.getBean("memberListPrinter", MemberListPrinter.class);
+        memberListPrinter.printAll();
+    }
+
+    private static void processInfoCommand(String[] args){
+        if(args.length!=2){
+            printHelp();
+            return;
+        }
+        MemberInfoPrinter memberInfoPrinter = ctx.getBean("infoPrinter", MemberInfoPrinter.class);
+        memberInfoPrinter.printMemberInfo(args[1]);
+    }
+
+    private static void processVersionCommand(){
+        VersionPrinter versionPrinter = ctx.getBean("versionPrinter", VersionPrinter.class);
+        versionPrinter.print();
+    }
+
     public static void printHelp(){
         System.out.println();
         System.out.println("잘못된 명령입니다. 아래 명령어 사용법을 확인하세요");
         System.out.println("명령어 사용법");
         System.out.println("new 이메일 이름 암호 암호확인");
         System.out.println("change 이메일 현재 비번 변경비번");
+        System.out.println("list");
+        System.out.println("info 이메일");
         System.out.println();
     }
 
@@ -90,8 +111,18 @@ public class MainForSpring {
             } else if(command.startsWith("change")) {
                 processChangeCommand(command.split(" "));
                 continue;
+            } else if(command.equals("list")){
+                processListCommand();
+                continue;
+            } else if(command.startsWith("info")){
+                processInfoCommand(command.split(" "));
+                continue;
+            } else if(command.equals("version")){
+                processVersionCommand();
+                continue;
             }
             printHelp();
         }
     }
+
 }
