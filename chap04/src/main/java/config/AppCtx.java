@@ -42,6 +42,11 @@ public class AppCtx {
     }
 
     @Bean
+    public MemberSummaryPrinter memberSummaryPrinter(){
+        return new MemberSummaryPrinter();
+    }
+
+    @Bean
     public MemberListPrinter memberListPrinter(){
 //        return new MemberListPrinter(memberDao(), memberPrinter());
         return new MemberListPrinter();
