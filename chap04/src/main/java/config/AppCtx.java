@@ -42,6 +42,7 @@ public class AppCtx {
     }
 
     @Bean
+    @Qualifier("summaryPrinter")
     public MemberSummaryPrinter memberSummaryPrinter(){
         return new MemberSummaryPrinter();
     }
@@ -58,6 +59,8 @@ public class AppCtx {
 //        memberInfoPrinter.setMemberDao(memberDao());
 //        memberInfoPrinter.setMemberPrinter(memberPrinter());
 //        return memberInfoPrinter;
+        MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
+        infoPrinter.setMemberPrinter(memberPrinter2());
         return new MemberInfoPrinter();
     }
 

@@ -1,6 +1,7 @@
 package DI_example;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class MemberInfoPrinter {
     private MemberDao memberDao;
@@ -25,6 +26,7 @@ public class MemberInfoPrinter {
     // 메서드 파라미터 타입에 해당하는 빈 객체를 찾아 인자로 주입한다.
     // 만약 파라미터 타입에 해당하는 빈 객체가 여러개일 경우, 익셉션 발생! @Qualifier로 지정해줘야 한다.
     @Autowired
+    @Qualifier("printer")
     public void setMemberPrinter(MemberPrinter memberPrinter){
         this.memberPrinter = memberPrinter;
     }
