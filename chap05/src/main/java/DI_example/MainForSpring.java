@@ -19,7 +19,7 @@ public class MainForSpring {
         }
 
         // 스프링 컨테이너로부터 이름이 "memberRegisterService"인 bean 객체를 구한다.
-        MemberRegisterService regSvc = ctx.getBean("memberRegisterService", MemberRegisterService.class);
+        MemberRegisterService regSvc = ctx.getBean(MemberRegisterService.class);
         RegisterRequest request = new RegisterRequest();
         request.setEmail(arg[1]);
         request.setName(arg[2]);
@@ -45,7 +45,7 @@ public class MainForSpring {
         }
 
         // 스프링 컨테이너로부터 이름이 "changePasswordService"인 bean 객체를 구한다.
-        ChangePasswordService changePwdSvc = ctx.getBean("changePasswordService", ChangePasswordService.class);
+        ChangePasswordService changePwdSvc = ctx.getBean(ChangePasswordService.class);
         try{
             changePwdSvc.changePassword(args[1], args[2], args[3]);
             System.out.println("암호를 변경했습니다 \n");
