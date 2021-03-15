@@ -1,4 +1,10 @@
 # Project exclude paths
 /chap02/.gradle/
+/chap02/gradle
 /chap03/.gradle/
+/chap03/gradle
+/chap04/.gradle/
+/chap04/gradle
+/chap05/.gradle/
+/chap05/gradle
 /.idea/
