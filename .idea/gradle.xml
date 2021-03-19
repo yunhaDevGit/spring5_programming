@@ -57,6 +57,39 @@
         </option>
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/chap07" />
+        <option name="gradleHome" value="C:/gradle-6.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/chap07" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/chap08" />
+        <option name="gradleHome" value="C:/gradle-6.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/chap08" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/untitled" />
+        <option name="gradleHome" value="C:/gradle-6.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/untitled" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
