@@ -29,7 +29,7 @@ public class DBQuery {
                 try {
                     connection.close(); // 풀에 반환
                 } catch (SQLException e){
-                    
+
                 }
         }
     }

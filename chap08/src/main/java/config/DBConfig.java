@@ -3,6 +3,7 @@ package config;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import spring.MemberDao;
 
 @Configuration
 public class DBConfig {
@@ -17,5 +18,10 @@ public class DBConfig {
         dataSource.setInitialSize(2);
         dataSource.setMaxActive(10);
         return dataSource;
+    }
+
+    @Bean
+    public MemberDao memberDao() {
+        return new MemberDao(dataSource());
     }
 }
